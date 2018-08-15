@@ -1,0 +1,36 @@
+{
+    "name": "PurchaseOrderLine",
+    "fields": [
+        {
+            "fieldName": "qty",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "purchaseOrder",
+            "otherEntityName": "purchaseOrder",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "sku",
+            "otherEntityName": "sKU",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20180815083747",
+    "entityTableName": "purchase_order_line",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}

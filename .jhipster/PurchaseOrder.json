@@ -1,0 +1,30 @@
+{
+    "name": "PurchaseOrder",
+    "fields": [
+        {
+            "fieldName": "code",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "lineItem",
+            "otherEntityName": "purchaseOrderLine",
+            "otherEntityRelationshipName": "purchaseOrder"
+        }
+    ],
+    "changelogDate": "20180815083745",
+    "entityTableName": "purchase_order",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}
