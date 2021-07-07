@@ -1,0 +1,30 @@
+{
+    "name": "SalesOrder",
+    "fields": [
+        {
+            "fieldName": "code",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "lineItem",
+            "otherEntityName": "salesOrderLine",
+            "otherEntityRelationshipName": "salesOrder"
+        }
+    ],
+    "changelogDate": "20180815083744",
+    "entityTableName": "sales_order",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "mySuffix"
+}

@@ -1,0 +1,67 @@
+
+entity Category {
+	name String required,
+    code String required
+}
+
+entity Item {
+	name String required,
+    code String required
+}
+
+// an ignored comment
+/** not an ignored comment */
+entity SKU {
+	name String,
+    code String required
+}
+
+entity SalesOrder {
+ code String required
+}
+entity PurchaseOrder {
+ code String required
+}
+entity SalesOrderLine {
+      qty Integer required
+}
+
+entity PurchaseOrderLine {
+
+     qty Integer required
+}
+
+
+
+
+enum ORDERSTATUS {
+    CREATED, APPROVED, PAID
+}
+
+
+
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	PurchaseOrder{lineItem} to PurchaseOrderLine,
+	SalesOrder{lineItem} to SalesOrderLine
+}
+
+relationship ManyToOne {
+	Item{category} to Category,
+    SKU{item} to Item,
+    SalesOrderLine{sku} to SKU,
+        PurchaseOrderLine{sku} to SKU
+}
+
+
+
+
+paginate all with pagination
+
+dto all with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl 
+// Set an angular suffix
+angularSuffix * with mySuffix
